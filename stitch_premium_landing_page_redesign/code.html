@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>PR Mobile Tyre - 24/7 Mobile Tyre Service</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "tertiary-fixed-dim": "#c6c6c7",
+                        "surface-dim": "#131313",
+                        "on-primary-container": "#6b4c00",
+                        "on-tertiary-fixed": "#1a1c1c",
+                        "primary": "#ffdca1",
+                        "surface-bright": "#393939",
+                        "on-surface": "#e5e2e1",
+                        "surface-container-high": "#2a2a2a",
+                        "tertiary-fixed": "#e2e2e2",
+                        "inverse-primary": "#7c5800",
+                        "on-primary-fixed": "#271900",
+                        "on-primary-fixed-variant": "#5e4200",
+                        "tertiary-container": "#c4c5c5",
+                        "on-tertiary": "#2f3131",
+                        "on-background": "#e5e2e1",
+                        "on-error-container": "#ffdad6",
+                        "surface-tint": "#ffba20",
+                        "primary-container": "#ffb800",
+                        "on-surface-variant": "#d5c4ab",
+                        "surface-container-highest": "#353534",
+                        "on-secondary-fixed-variant": "#005227",
+                        "surface": "#131313",
+                        "on-secondary-container": "#003e1c",
+                        "background": "#131313",
+                        "secondary": "#4de082",
+                        "outline-variant": "#514532",
+                        "secondary-container": "#00b55d",
+                        "on-primary": "#412d00",
+                        "error": "#ffb4ab",
+                        "primary-fixed": "#ffdea8",
+                        "inverse-on-surface": "#313030",
+                        "surface-container-lowest": "#0e0e0e",
+                        "tertiary": "#e0e1e1",
+                        "error-container": "#93000a",
+                        "primary-fixed-dim": "#ffba20",
+                        "on-secondary": "#003919",
+                        "outline": "#9e8f78",
+                        "on-tertiary-container": "#505252",
+                        "secondary-fixed": "#6dfe9c",
+                        "inverse-surface": "#e5e2e1",
+                        "on-secondary-fixed": "#00210c",
+                        "surface-variant": "#353534",
+                        "surface-container": "#201f1f",
+                        "on-error": "#690005",
+                        "secondary-fixed-dim": "#4de082",
+                        "surface-container-low": "#1c1b1b",
+                        "on-tertiary-fixed-variant": "#454747"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "stack-lg": "32px",
+                        "stack-md": "16px",
+                        "container-max": "1280px",
+                        "section-padding": "80px",
+                        "margin-mobile": "20px",
+                        "stack-sm": "8px",
+                        "gutter": "24px"
+                    },
+                    "fontFamily": {
+                        "body-lg": ["Inter"],
+                        "headline-xl": ["Inter"],
+                        "headline-lg": ["Inter"],
+                        "headline-md": ["Inter"],
+                        "label-bold": ["Inter"],
+                        "body-md": ["Inter"]
+                    },
+                    "fontSize": {
+                        "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                        "headline-xl": ["48px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "800"}],
+                        "headline-lg": ["32px", {"lineHeight": "1.2", "letterSpacing": "-0.01em", "fontWeight": "700"}],
+                        "headline-md": ["24px", {"lineHeight": "1.3", "fontWeight": "700"}],
+                        "label-bold": ["14px", {"lineHeight": "1.0", "letterSpacing": "0.05em", "fontWeight": "700"}],
+                        "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .glint {
+            position: relative;
+            overflow: hidden;
+        }
+        .glint::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 50%;
+            height: 100%;
+            background: linear-gradient(to right, rgba(255,255,255,0) 0%, rgba(255,255,255,0.3) 50%, rgba(255,255,255,0) 100%);
+            transform: skewX(-20deg);
+            animation: glint-animation 3s infinite;
+        }
+        @keyframes glint-animation {
+            0% { left: -100%; }
+            50% { left: 200%; }
+            100% { left: 200%; }
+        }
+    </style>
+</head>
+<body class="bg-background text-on-surface font-body-md overflow-x-hidden">
+<!-- TopNavBar Component -->
+<nav class="bg-surface/60 backdrop-blur-xl fixed top-0 w-full z-50 border-b border-white/10 flat no shadows">
+<div class="flex justify-between items-center h-20 px-margin-mobile md:px-section-padding max-w-container-max mx-auto">
+<div class="text-headline-md font-headline-md font-extrabold text-primary">
+                PR Mobile Tyre
+            </div>
+<div class="hidden md:flex gap-gutter items-center">
+<a class="font-label-bold text-label-bold text-on-surface-variant hover:text-primary transition-colors" href="#emergency">Emergency</a>
+<a class="font-label-bold text-label-bold text-on-surface-variant hover:text-primary transition-colors" href="#services">Services</a>
+<a class="font-label-bold text-label-bold text-on-surface-variant hover:text-primary transition-colors" href="#why-us">Why Us</a>
+<a class="font-label-bold text-label-bold text-on-surface-variant hover:text-primary transition-colors" href="#contact">Contact</a>
+</div>
+<button class="bg-primary-container text-on-primary-container font-label-bold text-label-bold px-6 py-3 rounded-DEFAULT glint hover:opacity-80 transition-opacity Active: scale-95 transition-transform flex items-center gap-2">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">phone_in_talk</span>
+                Emergency Call
+            </button>
+</div>
+</nav>
+<!-- Hero Section -->
+<header class="relative min-h-[90vh] flex items-center pt-20" data-alt="A cinematic, high-contrast photograph of a sleek, dark mobile tyre service van parked at night under dramatic street lighting. The scene is illuminated by the van's amber hazard lights and sharp LED headlights, reflecting off the wet asphalt. The overall mood is urgent yet professional, emphasizing the high-end automotive aesthetic with deep blacks and intense yellow/amber accents." style="background-image: url('https://lh3.googleusercontent.com/aida/ADBb0uinT3eJJy8TsS5xLGm1H5SUFSkAIvAIiJ797WWMsmGw9bS91ufyMa5uxN4sIDDo0f7uCgY2lvVYJ7wYI3voPMSVIe9nI3CelS0DGvWHJbm9dkKRv5osfdS7v4jyephPBiom40Ywy-StD4W9InH71WtYVqn_yk2SIs3Lbo-UN6RoHitlc1kJPPoPJwDHexurtJQOD-MqppZ-LgjBa4l5DH9B595eV8nVtIV17WISTRmbJ8p2eB8t_x-Y1OxSGILCperVTH9BAqR3'); background-size: cover; background-position: center;">
+<div class="absolute inset-0 bg-background/80 bg-gradient-to-r from-background via-background/90 to-transparent"></div>
+<div class="relative z-10 w-full px-margin-mobile md:px-section-padding max-w-container-max mx-auto">
+<div class="max-w-2xl space-y-stack-lg">
+<h1 class="text-headline-xl font-headline-xl text-on-surface">
+                    Mobile Tyres 24/7: <span class="text-primary-container">Anywhere, Anytime, Just a Call Away</span>
+</h1>
+<p class="text-body-lg font-body-lg text-on-surface-variant max-w-xl">
+                    Premium roadside concierge delivering high-speed, professional tyre replacement and repair directly to your location. Fast, reliable, and engineered for your safety.
+                </p>
+<div class="flex flex-col sm:flex-row gap-stack-md pt-stack-sm">
+<button class="bg-primary-container text-on-primary-container font-label-bold text-label-bold px-8 py-4 rounded-DEFAULT glint hover:opacity-80 transition-opacity flex items-center justify-center gap-2">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">emergency</span>
+                        Emergency Call
+                    </button>
+<button class="bg-secondary text-on-secondary font-label-bold text-label-bold px-8 py-4 rounded-DEFAULT hover:opacity-80 transition-opacity flex items-center justify-center gap-2 shadow-[0_0_20px_rgba(77,224,130,0.3)]">
+<span class="material-symbols-outlined">chat</span>
+                        Live Chat via WhatsApp
+                    </button>
+</div>
+</div>
+</div>
+</header>
+<!-- Emergency Service Banner -->
+<section class="bg-primary-container text-on-primary-container py-stack-lg" id="emergency">
+<div class="px-margin-mobile md:px-section-padding max-w-container-max mx-auto flex flex-col md:flex-row items-center justify-between gap-gutter">
+<div class="flex items-center gap-stack-md">
+<span class="material-symbols-outlined text-headline-xl" style="font-variation-settings: 'FILL' 1;">warning</span>
+<div>
+<h2 class="text-headline-md font-headline-md">Emergency Tyre Change Service</h2>
+<p class="text-body-md font-body-md opacity-90">Stuck on the road? We dispatch immediately. 24/7 Rapid Response.</p>
+</div>
+</div>
+<button class="bg-on-primary-container text-primary-container font-label-bold text-label-bold px-8 py-4 rounded-DEFAULT hover:bg-opacity-90 transition-all border border-transparent whitespace-nowrap">
+                Call 07415 390448 Now
+            </button>
+</div>
+</section>
+<!-- Services Section -->
+<section class="py-section-padding bg-background relative overflow-hidden" id="services">
+<div class="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-[1000px] h-[500px] bg-primary/5 rounded-full blur-[100px] pointer-events-none"></div>
+<div class="px-margin-mobile md:px-section-padding max-w-container-max mx-auto relative z-10">
+<div class="text-center mb-section-padding space-y-stack-sm">
+<h2 class="text-headline-lg font-headline-lg text-on-surface">Precision Services</h2>
+<p class="text-body-lg font-body-lg text-on-surface-variant max-w-2xl mx-auto">Expertise delivered to your driveway or roadside. Our mobile units are fully equipped with state-of-the-art diagnostic and fitting technology.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-gutter">
+<!-- Service Card 1 -->
+<div class="bg-surface-container-high border border-white/10 rounded-lg p-stack-lg hover:border-white/30 hover:bg-surface-container-highest transition-all group flex flex-col gap-stack-md">
+<div class="w-16 h-16 rounded-full bg-surface-container-highest flex items-center justify-center border border-primary/20 group-hover:border-primary/50 transition-colors">
+<span class="material-symbols-outlined text-[32px] text-primary-container">tire_repair</span>
+</div>
+<div>
+<h3 class="text-headline-md font-headline-md text-on-surface mb-2">Onsite Fitting</h3>
+<p class="text-body-md font-body-md text-on-surface-variant">Professional tyre mounting and balancing performed wherever you are parked.</p>
+</div>
+</div>
+<!-- Service Card 2 -->
+<div class="bg-surface-container-high border border-white/10 rounded-lg p-stack-lg hover:border-white/30 hover:bg-surface-container-highest transition-all group flex flex-col gap-stack-md">
+<div class="w-16 h-16 rounded-full bg-surface-container-highest flex items-center justify-center border border-primary/20 group-hover:border-primary/50 transition-colors">
+<span class="material-symbols-outlined text-[32px] text-primary-container">settings</span>
+</div>
+<div>
+<h3 class="text-headline-md font-headline-md text-on-surface mb-2">Tyre Balancing</h3>
+<p class="text-body-md font-body-md text-on-surface-variant">Precision laser balancing ensures a smooth, vibration-free ride at all speeds.</p>
+</div>
+</div>
+<!-- Service Card 3 -->
+<div class="bg-surface-container-high border border-white/10 rounded-lg p-stack-lg hover:border-white/30 hover:bg-surface-container-highest transition-all group flex flex-col gap-stack-md">
+<div class="w-16 h-16 rounded-full bg-surface-container-highest flex items-center justify-center border border-primary/20 group-hover:border-primary/50 transition-colors">
+<span class="material-symbols-outlined text-[32px] text-primary-container">autorenew</span>
+</div>
+<div>
+<h3 class="text-headline-md font-headline-md text-on-surface mb-2">Wheel Rotations</h3>
+<p class="text-body-md font-body-md text-on-surface-variant">Maximize tyre lifespan with systematic rotation patterns tailored to your vehicle.</p>
+</div>
+</div>
+<!-- Service Card 4 -->
+<div class="bg-surface-container-high border border-white/10 rounded-lg p-stack-lg hover:border-white/30 hover:bg-surface-container-highest transition-all group flex flex-col gap-stack-md">
+<div class="w-16 h-16 rounded-full bg-surface-container-highest flex items-center justify-center border border-primary/20 group-hover:border-primary/50 transition-colors">
+<span class="material-symbols-outlined text-[32px] text-primary-container">build</span>
+</div>
+<div>
+<h3 class="text-headline-md font-headline-md text-on-surface mb-2">Puncture Repair</h3>
+<p class="text-body-md font-body-md text-on-surface-variant">Swift, safe, and permanent plug-and-patch repairs meeting strict British safety standards.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Why Choose Us / Image Feature Section -->
+<section class="py-section-padding bg-surface" id="why-us">
+<div class="px-margin-mobile md:px-section-padding max-w-container-max mx-auto">
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-section-padding items-center">
+<div class="space-y-stack-lg">
+<div>
+<h2 class="text-headline-lg font-headline-lg text-on-surface mb-stack-sm">Engineered for Excellence</h2>
+<p class="text-body-lg font-body-lg text-on-surface-variant">We don't just change tyres; we provide a high-end automotive care experience. Our service is built on four core pillars.</p>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-stack-md">
+<div class="flex items-start gap-stack-sm">
+<span class="material-symbols-outlined text-primary-container">done_all</span>
+<div>
+<h4 class="text-body-lg font-headline-md text-on-surface">Precision</h4>
+<p class="text-body-md text-on-surface-variant">Laser-accurate fitting.</p>
+</div>
+</div>
+<div class="flex items-start gap-stack-sm">
+<span class="material-symbols-outlined text-primary-container">shield</span>
+<div>
+<h4 class="text-body-lg font-headline-md text-on-surface">Reliability</h4>
+<p class="text-body-md text-on-surface-variant">Always there when needed.</p>
+</div>
+</div>
+<div class="flex items-start gap-stack-sm">
+<span class="material-symbols-outlined text-primary-container">speed</span>
+<div>
+<h4 class="text-body-lg font-headline-md text-on-surface">Efficiency</h4>
+<p class="text-body-md text-on-surface-variant">Rapid dispatch &amp; completion.</p>
+</div>
+</div>
+<div class="flex items-start gap-stack-sm">
+<span class="material-symbols-outlined text-primary-container">verified</span>
+<div>
+<h4 class="text-body-lg font-headline-md text-on-surface">Expertise</h4>
+<p class="text-body-md text-on-surface-variant">Certified technicians.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="relative h-[600px] rounded-xl overflow-hidden border border-white/10 group">
+<img alt="Premium mobile tyre service operation" class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" data-alt="A high-resolution, close-up photograph of a professional mechanic in dark, branded workwear changing a large, premium tyre on a high-end vehicle. The setting is an immaculate, well-lit mobile workstation. The lighting is crisp and cool, highlighting the metallic textures of the tools and the deep black rubber of the tyre, conveying a sense of precision and high-tech automotive care." src="https://lh3.googleusercontent.com/aida/ADBb0ug-i5v6C14YQB7oamqNFnBXEtHBlTmMbvCX2qGIlXaq8IUga7uhc0EIfMuvDansGONSK_FSABL-szM5YBbPBofonA0LlZ1PScTGIowa8XoDevqRQC4NCvxGFacL2tW3iNlHbssK2yUhgLNY9XmJ4fVpk9DnvAm-JNs20c4ctvP_vNffi-aZ2Dhr8CrjE7DoQRhAaNWkJKriQ0QhOYQ2L3UhuhdmfCkcKjY2B2hwCtPyZiXujaWYFPLNpbF7qvQy95v3AHQB_bUI0w"/>
+<div class="absolute inset-0 bg-gradient-to-t from-background/80 via-transparent to-transparent"></div>
+</div>
+</div>
+</div>
+</section>
+<!-- Tyre Brands Carousel -->
+<section class="py-stack-lg border-y border-white/5 bg-background">
+<div class="px-margin-mobile md:px-section-padding max-w-container-max mx-auto text-center">
+<p class="text-label-bold font-label-bold text-on-surface-variant mb-stack-md uppercase tracking-widest">Premium Brands Supplied &amp; Fitted</p>
+<div class="flex flex-wrap justify-center items-center gap-section-padding opacity-50 hover:opacity-100 transition-opacity duration-500 grayscale">
+<!-- Using images provided as context for brand logos, styling to match grayscale requirement -->
+<div class="h-12 w-32 relative mix-blend-screen" data-alt="A monochromatic, high-contrast array of premium tyre brand logos including Hankook, Matador, Maxxis, and Goodyear. The logos are arranged horizontally against a dark background, emphasizing a sleek, industrial aesthetic suitable for a high-end automotive service interface." style="background-image: url('https://lh3.googleusercontent.com/aida/ADBb0uh23ovLdmIkebY9T9_5Az2YUPT6bhb4ubcYC7nV6NkKqis69NtpHfXVXf9XAkb5mPtUB42d9a6IWeiGHvh4eW5w_TRuGY0-8DjEP7f3OnQn0NB5N84W-GVHWy_cndXWq3GxFuyVX5yZXfa_Uym7Fdi0KuJU-f0CtaejSI3XhCJdET3jZK6AioW8jun37ExglNE9ehnalsHHAonugRmngIsV8PADjMMvGjTtJ7pOG2zhfDNsejecSVG5Dr8yNYgObbRnx0wvWd_POA'); background-size: contain; background-position: center; background-repeat: no-repeat;"></div>
+<div class="h-12 w-32 relative mix-blend-screen" data-alt="A clean, minimalist layout of premium automotive brand insignia in sharp greyscale. The logos represent top-tier tyre manufacturers, displayed in a row to convey trust and quality. The dark background ensures the white elements of the logos stand out sharply, fitting a premium tech-focused design system." style="background-image: url('https://lh3.googleusercontent.com/aida/ADBb0uipffbcBz4sPnNisbTN7q0N-AJPz5DovuSJDzs7x2BViwKZKuRdBeYzkaBFDErCOwLBq4WJWVtBl9z2w3M1iME_LV8kdh2ks-T6ocAyHCTyU1jgJ9WgAAdZE829DzIhYMazYQ7SfT_BbVKKLZ2NqeagAc4QtlM8sYl4uqqNOb7OZNIdks5zWttIIKY3IgDWjTefy71CfVNx-EfODLu4kO79oDlOBW-mKcPJozA5H87R-l6t1_Hidnk5qsCBID_f630gWfNMIFomLA'); background-size: contain; background-position: center; background-repeat: no-repeat;"></div>
+<!-- Placeholder text for visual balance in lieu of specific SVG logos -->
+<span class="text-headline-md font-headline-md font-bold">HANKOOK</span>
+<span class="text-headline-md font-headline-md font-bold">GOODYEAR</span>
+<span class="text-headline-md font-headline-md font-bold">MAXXIS</span>
+</div>
+</div>
+</section>
+<!-- Live Chat Pill (Floating) -->
+<a class="fixed bottom-margin-mobile right-margin-mobile z-50 bg-secondary text-on-secondary px-6 py-4 rounded-full shadow-[0_10px_40px_rgba(77,224,130,0.4)] flex items-center gap-stack-sm hover:scale-105 transition-transform backdrop-blur-md border border-white/20" href="#">
+<span class="material-symbols-outlined text-[24px]">chat</span>
+<span class="font-label-bold text-label-bold hidden md:inline">Live Chat</span>
+</a>
+<!-- Footer Component -->
+<footer class="bg-surface-container-lowest text-primary py-section-padding w-full border-t border-white/10 flat no shadows" id="contact">
+<div class="grid grid-cols-1 md:grid-cols-3 gap-gutter px-margin-mobile md:px-section-padding max-w-container-max mx-auto">
+<div class="space-y-stack-md">
+<div class="text-headline-lg font-headline-lg font-extrabold text-primary">
+                    PR Mobile Tyre
+                </div>
+<p class="text-body-md font-body-md text-on-tertiary-fixed-variant max-w-sm">
+                    Premium mobile tyre fitting and emergency roadside assistance. Engineered for speed, safety, and reliability.
+                </p>
+</div>
+<div class="space-y-stack-sm">
+<h4 class="text-body-lg font-headline-md text-on-surface mb-stack-sm">Contact Information</h4>
+<a class="flex items-center gap-2 text-body-md font-body-md text-on-tertiary-fixed-variant hover:text-on-surface transition-colors hover:grayscale-0 transition-all duration-300" href="tel:07415390448">
+<span class="material-symbols-outlined text-[20px]">phone</span>
+                    Phone: 07415 390448
+                </a>
+<a class="flex items-center gap-2 text-body-md font-body-md text-on-tertiary-fixed-variant hover:text-on-surface transition-colors hover:grayscale-0 transition-all duration-300" href="mailto:mobiletyres247hrs@gmail.com">
+<span class="material-symbols-outlined text-[20px]">mail</span>
+                    Email: mobiletyres247hrs@gmail.com
+                </a>
+<div class="flex items-start gap-2 text-body-md font-body-md text-on-tertiary-fixed-variant mt-2">
+<span class="material-symbols-outlined text-[20px] mt-1">location_on</span>
+<span>Address: Unit B2 Crabtree Road Thorpe Industrial Estate TW20 8RN</span>
+</div>
+</div>
+<div class="space-y-stack-sm flex flex-col md:items-end">
+<h4 class="text-body-lg font-headline-md text-on-surface mb-stack-sm md:text-right w-full">Legal</h4>
+<a class="text-body-md font-body-md text-on-tertiary-fixed-variant hover:text-on-surface transition-colors hover:grayscale-0 transition-all duration-300" href="#">Privacy Policy</a>
+<a class="text-body-md font-body-md text-on-tertiary-fixed-variant hover:text-on-surface transition-colors hover:grayscale-0 transition-all duration-300" href="#">Terms of Service</a>
+</div>
+</div>
+<div class="border-t border-white/5 mt-section-padding pt-stack-lg px-margin-mobile md:px-section-padding max-w-container-max mx-auto flex flex-col md:flex-row justify-between items-center gap-stack-md text-body-md font-body-md text-on-tertiary-fixed-variant">
+<p>© 2024 PR Mobile Tyre. All rights reserved.</p>
+</div>
+</footer>
+</body></html>

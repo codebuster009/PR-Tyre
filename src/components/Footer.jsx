@@ -5,7 +5,7 @@ export default function Footer() {
   return (
     <footer
       id="contact"
-      className="relative bg-surface-container-lowest border-t border-white/10 pt-section-padding pb-10"
+      className="relative bg-surface-container-lowest border-t border-white/10 pt-16 md:pt-section-padding pb-10"
     >
       {/* Top gradient line */}
       <div
@@ -22,11 +22,11 @@ export default function Footer() {
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, margin: '-80px' }}
         transition={{ duration: 0.6 }}
-        className="max-w-container-max mx-auto px-margin-mobile md:px-12 grid grid-cols-1 md:grid-cols-3 gap-gutter"
+        className="max-w-container-max mx-auto px-5 md:px-12 grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-gutter"
       >
         {/* Brand */}
         <div className="space-y-stack-md">
-          <div className="text-headline-lg font-extrabold">
+          <div className="text-2xl md:text-headline-lg font-extrabold">
             PR <span className="shimmer-text">Mobile Tyre</span>
           </div>
           <p className="text-body-md text-on-surface-variant max-w-sm">
@@ -42,16 +42,16 @@ export default function Footer() {
           </h4>
           <a
             href="tel:07415390448"
-            className="flex items-center gap-2 text-body-md text-on-surface-variant hover:text-primary-container transition-colors"
+            className="group flex items-center gap-2 text-body-md text-on-surface-variant hover:text-primary-container hover:translate-x-0.5 transition-all"
           >
-            <Phone size={16} className="text-primary-container" />
+            <Phone size={16} className="text-primary-container group-hover:-rotate-12 transition-transform" />
             Phone: 07415 390448
           </a>
           <a
             href="mailto:mobiletyres247hrs@gmail.com"
-            className="flex items-center gap-2 text-body-md text-on-surface-variant hover:text-primary-container transition-colors break-all"
+            className="group flex items-center gap-2 text-body-md text-on-surface-variant hover:text-primary-container hover:translate-x-0.5 transition-all break-all"
           >
-            <Mail size={16} className="text-primary-container shrink-0" />
+            <Mail size={16} className="text-primary-container shrink-0 group-hover:scale-110 transition-transform" />
             mobiletyres247hrs@gmail.com
           </a>
           <div className="flex items-start gap-2 text-body-md text-on-surface-variant">
@@ -88,15 +88,11 @@ export default function Footer() {
         </div>
       </motion.div>
 
-      <div className="max-w-container-max mx-auto px-margin-mobile md:px-12 mt-16 pt-8 border-t border-white/5 flex flex-col md:flex-row items-center justify-between gap-4 text-sm text-on-surface-variant">
+      <div className="max-w-container-max mx-auto px-5 md:px-12 mt-12 md:mt-16 pt-6 md:pt-8 border-t border-white/5 flex flex-col md:flex-row items-center justify-between gap-3 md:gap-4 text-xs sm:text-sm text-on-surface-variant">
         <p>© {new Date().getFullYear()} PR Mobile Tyre. All rights reserved.</p>
-        <div className="flex items-center gap-2 text-[11px] uppercase tracking-[0.25em]">
-          <span className="relative inline-flex h-2 w-2">
-            <span className="absolute inset-0 rounded-full bg-secondary animate-pulseRing" />
-            <span className="relative h-2 w-2 rounded-full bg-secondary" />
-          </span>
-          System operational
-        </div>
+        <p className="text-[11px] uppercase tracking-[0.25em]">
+          Crafted in Surrey · Built for the road
+        </p>
       </div>
     </footer>
   );

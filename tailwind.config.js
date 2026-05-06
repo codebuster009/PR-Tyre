@@ -45,7 +45,7 @@ export default {
         'stack-lg': '32px',
         gutter: '24px',
         'margin-mobile': '20px',
-        'section-padding': '80px',
+        'section-padding': '112px',
       },
       maxWidth: {
         'container-max': '1280px',

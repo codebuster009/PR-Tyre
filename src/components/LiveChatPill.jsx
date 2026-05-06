@@ -12,7 +12,7 @@ export default function LiveChatPill() {
       transition={{ delay: 1, duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
       whileHover={{ scale: 1.05 }}
       whileTap={{ scale: 0.95 }}
-      className="fixed bottom-5 right-5 z-50 flex items-center gap-2 bg-secondary text-on-secondary px-5 py-3.5 rounded-full glow-secondary backdrop-blur-md border border-white/20"
+      className="hidden md:flex fixed bottom-5 right-5 z-50 items-center gap-2 bg-secondary text-on-secondary px-5 py-3.5 rounded-full glow-secondary backdrop-blur-md border border-white/20"
       aria-label="Open WhatsApp chat"
     >
       {/* Pulse ring */}

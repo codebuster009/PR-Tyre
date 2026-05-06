@@ -28,7 +28,7 @@ export default function Services() {
   return (
     <section
       id="services"
-      className="relative py-section-padding overflow-hidden"
+      className="relative py-16 md:py-section-padding overflow-hidden"
     >
       {/* Glow */}
       <div
@@ -40,21 +40,21 @@ export default function Services() {
         }}
       />
 
-      <div className="relative max-w-container-max mx-auto px-margin-mobile md:px-12">
+      <div className="relative max-w-container-max mx-auto px-5 md:px-12">
         <motion.div
           initial={{ opacity: 0, y: 24 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: '-80px' }}
           transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
-          className="text-center max-w-2xl mx-auto mb-12"
+          className="text-center max-w-2xl mx-auto mb-12 md:mb-16"
         >
-          <span className="inline-block text-[11px] uppercase tracking-[0.3em] text-primary-container mb-3">
+          <span className="inline-block text-[10px] sm:text-[11px] uppercase tracking-[0.25em] sm:tracking-[0.3em] text-primary-container mb-3">
             What we do
           </span>
-          <h2 className="text-headline-lg text-on-surface mb-3">
+          <h2 className="text-3xl sm:text-headline-lg text-on-surface mb-3 font-bold">
             Precision Services
           </h2>
-          <p className="text-body-lg text-on-surface-variant">
+          <p className="text-base sm:text-body-lg text-on-surface-variant">
             Expertise delivered to your driveway or roadside. Our mobile units
             are fully equipped with state-of-the-art diagnostic and fitting
             technology.
@@ -69,9 +69,9 @@ export default function Services() {
             hidden: {},
             show: { transition: { staggerChildren: 0.1 } },
           }}
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-gutter"
+          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-gutter"
         >
-          {services.map(({ icon: Icon, title, desc }) => (
+          {services.map(({ icon: Icon, title, desc }, i) => (
             <motion.div
               key={title}
               variants={{
@@ -79,38 +79,21 @@ export default function Services() {
                 show: { opacity: 1, y: 0 },
               }}
               transition={{ duration: 0.55, ease: [0.22, 1, 0.36, 1] }}
-              whileHover={{ y: -4 }}
-              className="group relative p-stack-lg border border-white/10 bg-surface-container-lowest/40 backdrop-blur-sm hover:border-primary-container/40 hover:bg-surface-container-high transition-colors"
+              whileHover={{ y: -3 }}
+              className="group relative p-6 md:p-8 border border-white/[0.07] bg-surface-container-lowest/40 backdrop-blur-sm hover:border-primary-container/30 transition-colors"
             >
-              {/* Hover sheen */}
-              <div
-                aria-hidden="true"
-                className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none"
-                style={{
-                  background:
-                    'radial-gradient(400px circle at 0% 0%, rgba(255,184,0,0.08), transparent 60%)',
-                }}
-              />
+              <span className="absolute top-5 right-5 text-[10px] tracking-[0.2em] font-mono text-on-surface-variant/30">
+                0{i + 1}
+              </span>
 
-              <div className="relative">
-                <div className="w-14 h-14 rounded-full flex items-center justify-center bg-surface-container-high border border-primary-container/20 group-hover:border-primary-container/60 group-hover:rotate-[8deg] transition-all duration-500">
-                  <Icon size={26} className="text-primary-container" strokeWidth={2} />
-                </div>
-                <h3 className="text-headline-md text-on-surface mt-stack-md mb-2">
-                  {title}
-                </h3>
-                <p className="text-body-md text-on-surface-variant">{desc}</p>
-
-                {/* Reveal arrow on hover */}
-                <div className="mt-4 flex items-center gap-1 text-[11px] uppercase tracking-widest text-primary-container opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-300">
-                  Learn more
-                  <span aria-hidden="true">→</span>
-                </div>
+              <div className="w-11 h-11 md:w-12 md:h-12 rounded-full flex items-center justify-center bg-primary-container/10 border border-primary-container/25 group-hover:border-primary-container/60 transition-colors duration-500 mb-5 md:mb-6">
+                <Icon size={20} className="text-primary-container md:hidden" strokeWidth={2} />
+                <Icon size={22} className="text-primary-container hidden md:block" strokeWidth={2} />
               </div>
-
-              {/* Corner accents */}
-              <span className="absolute top-0 left-0 h-3 w-3 border-t border-l border-primary-container/40" />
-              <span className="absolute bottom-0 right-0 h-3 w-3 border-b border-r border-primary-container/40" />
+              <h3 className="text-lg md:text-xl text-on-surface mb-2 font-bold tracking-tight">
+                {title}
+              </h3>
+              <p className="text-sm md:text-[15px] leading-relaxed text-on-surface-variant">{desc}</p>
             </motion.div>
           ))}
         </motion.div>

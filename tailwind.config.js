@@ -5,28 +5,37 @@ export default {
   theme: {
     extend: {
       colors: {
-        surface: '#131313',
-        'surface-dim': '#131313',
-        'surface-bright': '#393939',
-        'surface-container-lowest': '#0e0e0e',
-        'surface-container-low': '#1c1b1b',
-        'surface-container': '#201f1f',
-        'surface-container-high': '#2a2a2a',
-        'surface-container-highest': '#353534',
-        'on-surface': '#e5e2e1',
-        'on-surface-variant': '#d5c4ab',
-        outline: '#9e8f78',
-        'outline-variant': '#514532',
-        'surface-tint': '#ffba20',
-        primary: '#ffdca1',
-        'on-primary': '#412d00',
+        // Light, warm, automotive-service palette.
+        // Surfaces are layered off-whites; ink is a warm near-black.
+        surface: '#ffffff',
+        'surface-dim': '#f4f3f0',
+        'surface-bright': '#ffffff',
+        'surface-container-lowest': '#fafaf7',
+        'surface-container-low': '#f4f3f0',
+        'surface-container': '#eeece7',
+        'surface-container-high': '#e6e4dd',
+        'surface-container-highest': '#dcdad2',
+
+        // Text & strokes
+        'on-surface': '#171717',
+        'on-surface-variant': '#525252',
+        outline: '#d4d2cc',
+        'outline-variant': '#e5e3df',
+
+        // Accents
+        'surface-tint': '#ffb800',
+        primary: '#b97f00',
+        'on-primary': '#ffffff',
         'primary-container': '#ffb800',
-        'on-primary-container': '#6b4c00',
-        secondary: '#4de082',
-        'on-secondary': '#003919',
-        'secondary-container': '#00b55d',
-        background: '#131313',
-        'on-background': '#e5e2e1',
+        'on-primary-container': '#1a1100',
+
+        // Secondary kept as a cleaner emerald that reads well on white
+        secondary: '#0f9d58',
+        'on-secondary': '#ffffff',
+        'secondary-container': '#0f9d58',
+
+        background: '#fafaf7',
+        'on-background': '#171717',
       },
       fontFamily: {
         sans: ['Inter', 'system-ui', 'sans-serif'],
@@ -51,18 +60,14 @@ export default {
         'container-max': '1280px',
       },
       borderRadius: {
-        DEFAULT: '0px',
-        sm: '0px',
-        md: '0px',
-        lg: '0px',
-        xl: '0px',
+        DEFAULT: '6px',
+        sm: '4px',
+        md: '8px',
+        lg: '12px',
+        xl: '16px',
         full: '9999px',
       },
       keyframes: {
-        glint: {
-          '0%': { transform: 'translateX(-150%) skewX(-20deg)' },
-          '60%, 100%': { transform: 'translateX(350%) skewX(-20deg)' },
-        },
         marquee: {
           '0%': { transform: 'translateX(0)' },
           '100%': { transform: 'translateX(-50%)' },
@@ -72,32 +77,24 @@ export default {
           '50%': { transform: 'translateY(-8px)' },
         },
         pulseRing: {
-          '0%': { transform: 'scale(1)', opacity: '0.6' },
+          '0%': { transform: 'scale(1)', opacity: '0.55' },
           '100%': { transform: 'scale(1.8)', opacity: '0' },
         },
-        gridShift: {
+        roadDash: {
           '0%': { backgroundPosition: '0 0' },
-          '100%': { backgroundPosition: '40px 40px' },
+          '100%': { backgroundPosition: '32px 0' },
         },
-        shimmerText: {
-          '0%': { backgroundPosition: '-200% 0' },
-          '100%': { backgroundPosition: '200% 0' },
+        treadDown: {
+          '0%': { backgroundPosition: '0 0' },
+          '100%': { backgroundPosition: '0 8px' },
         },
       },
       animation: {
-        glint: 'glint 3.5s ease-in-out infinite',
         marquee: 'marquee 35s linear infinite',
         floatY: 'floatY 4s ease-in-out infinite',
         pulseRing: 'pulseRing 2.4s cubic-bezier(0.4,0,0.6,1) infinite',
-        gridShift: 'gridShift 12s linear infinite',
-        shimmerText: 'shimmerText 4s linear infinite',
-      },
-      backgroundImage: {
-        'grid-pattern':
-          'linear-gradient(to right, rgba(255,184,0,0.06) 1px, transparent 1px), linear-gradient(to bottom, rgba(255,184,0,0.06) 1px, transparent 1px)',
-      },
-      backgroundSize: {
-        'grid-40': '40px 40px',
+        roadDash: 'roadDash 1.6s linear infinite',
+        treadDown: 'treadDown 1.4s linear infinite',
       },
     },
   },

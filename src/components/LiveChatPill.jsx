@@ -12,16 +12,16 @@ export default function LiveChatPill() {
       transition={{ delay: 1, duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
       whileHover={{ scale: 1.05 }}
       whileTap={{ scale: 0.95 }}
-      className="hidden md:flex fixed bottom-5 right-5 z-50 items-center gap-2 bg-secondary text-on-secondary px-5 py-3.5 rounded-full glow-secondary backdrop-blur-md border border-white/20"
+      className="hidden md:flex fixed bottom-5 right-5 z-50 items-center gap-2 bg-secondary text-on-secondary px-5 py-3.5 rounded-full"
+      style={{ boxShadow: '0 12px 32px -8px rgba(15,157,88,0.45)' }}
       aria-label="Open WhatsApp chat"
     >
-      {/* Pulse ring */}
       <span aria-hidden="true" className="absolute inset-0 rounded-full">
         <span className="absolute inset-0 rounded-full border border-secondary/60 animate-pulseRing" />
       </span>
       <MessageCircle size={20} strokeWidth={2.4} className="relative" />
       <span className="relative text-label-bold uppercase hidden sm:inline">
-        Live Chat
+        WhatsApp
       </span>
     </motion.a>
   );

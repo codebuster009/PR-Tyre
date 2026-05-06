@@ -30,11 +30,11 @@ const areas = [
 
 export default function TrustRow() {
   return (
-    <section className="relative py-16 md:py-20 bg-surface-container-lowest/60 border-y border-white/5">
+    <section className="relative py-16 md:py-20 bg-background border-y border-outline-variant">
       <div className="max-w-container-max mx-auto px-5 md:px-12">
         {/* Accreditations */}
         <div className="text-center mb-12 md:mb-14">
-          <p className="text-[10px] sm:text-[11px] uppercase tracking-[0.25em] sm:tracking-[0.3em] text-on-surface-variant mb-6 md:mb-8">
+          <p className="text-[10px] sm:text-[11px] uppercase tracking-[0.22em] sm:tracking-[0.28em] text-on-surface-variant mb-6 md:mb-8 font-semibold">
             Vetted · Certified · Insured
           </p>
           <motion.div
@@ -55,13 +55,13 @@ export default function TrustRow() {
                   show: { opacity: 1, y: 0 },
                 }}
                 transition={{ duration: 0.5 }}
-                className="group flex items-center gap-2 px-3 py-3 border border-white/10 hover:border-primary-container/50 hover:bg-surface-container-low transition-colors"
+                className="group flex items-center gap-2 px-3 py-3 rounded-md border border-outline-variant bg-surface hover:border-primary-container hover:shadow-[0_8px_20px_-12px_rgba(255,184,0,0.4)] transition-all"
               >
                 <Icon
                   size={18}
-                  className="shrink-0 text-on-surface-variant group-hover:text-primary-container transition-colors"
+                  className="shrink-0 text-on-surface-variant group-hover:text-primary transition-colors"
                 />
-                <span className="text-[11px] sm:text-xs uppercase tracking-wider text-on-surface-variant group-hover:text-on-surface transition-colors leading-tight">
+                <span className="text-[11px] sm:text-xs uppercase tracking-wider text-on-surface-variant group-hover:text-on-surface transition-colors leading-tight font-semibold">
                   {label}
                 </span>
               </motion.div>
@@ -70,8 +70,8 @@ export default function TrustRow() {
         </div>
 
         {/* Service area chips */}
-        <div className="text-center pt-10 md:pt-12 border-t border-white/5">
-          <p className="text-[10px] sm:text-[11px] uppercase tracking-[0.25em] sm:tracking-[0.3em] text-on-surface-variant mb-6 md:mb-8">
+        <div className="text-center pt-10 md:pt-12 border-t border-outline-variant">
+          <p className="text-[10px] sm:text-[11px] uppercase tracking-[0.22em] sm:tracking-[0.28em] text-on-surface-variant mb-6 md:mb-8 font-semibold">
             Coverage · Surrey & M25
           </p>
           <motion.div
@@ -93,12 +93,12 @@ export default function TrustRow() {
                 }}
                 whileHover={{ y: -2 }}
                 transition={{ duration: 0.4 }}
-                className="px-3 py-1.5 text-xs sm:text-sm border border-white/10 hover:border-primary-container/60 hover:text-primary-container hover:bg-primary-container/5 transition-colors text-on-surface-variant cursor-default"
+                className="px-3 py-1.5 rounded-full text-xs sm:text-sm border border-outline-variant bg-surface hover:border-primary-container hover:text-primary hover:bg-primary-container/10 transition-colors text-on-surface-variant cursor-default"
               >
                 {a}
               </motion.span>
             ))}
-            <span className="px-3 py-1.5 text-xs sm:text-sm bg-primary-container/10 border border-primary-container/40 text-primary-container">
+            <span className="px-3 py-1.5 rounded-full text-xs sm:text-sm bg-primary-container/15 border border-primary-container/40 text-primary font-semibold">
               + 20 more
             </span>
           </motion.div>

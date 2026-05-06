@@ -12,11 +12,15 @@ import FAQ from './components/FAQ.jsx';
 import LiveChatPill from './components/LiveChatPill.jsx';
 import BottomActionBar from './components/BottomActionBar.jsx';
 import Footer from './components/Footer.jsx';
+import TyreEntranceGreeting from './components/TyreEntranceGreeting.jsx';
+import TyreScrollIndicator from './components/TyreScrollIndicator.jsx';
 
 export default function App() {
   return (
     <div className="relative pb-16 md:pb-0">
       <AmbientBackdrop />
+      <TyreEntranceGreeting />
+      <TyreScrollIndicator />
       <Navbar />
       <main>
         <Hero />

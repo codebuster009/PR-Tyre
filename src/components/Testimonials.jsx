@@ -20,7 +20,7 @@ const reviews = [
   },
   {
     quote:
-      'Sidewall tear on a holiday morning — every shop closed. PR Mobile picked up first ring, drove out to Egham, fitted a matching tyre on the spot.',
+      'Sidewall tear on a holiday morning — every shop closed. MobileTyres24Hour picked up first ring, drove out to Egham, fitted a matching tyre on the spot.',
     name: 'Marcus Reid',
     vehicle: 'Audi Q5',
     location: 'Egham',
@@ -48,38 +48,28 @@ export default function Testimonials() {
 
   return (
     <section
-      className="relative py-16 md:py-section-padding overflow-hidden"
+      className="relative py-16 md:py-section-padding overflow-hidden bg-surface-container-low"
       onMouseEnter={() => setPaused(true)}
       onMouseLeave={() => setPaused(false)}
     >
-      {/* Backdrop glow */}
-      <div
-        aria-hidden="true"
-        className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 h-[400px] w-[800px] max-w-full blur-[140px] opacity-40 pointer-events-none rounded-full"
-        style={{
-          background:
-            'radial-gradient(closest-side, rgba(255,184,0,0.12), transparent)',
-        }}
-      />
-
       <div className="relative max-w-container-max mx-auto px-5 md:px-12">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 md:gap-12 items-center">
           {/* Heading + summary */}
           <div className="lg:col-span-4">
-            <span className="inline-block text-[10px] sm:text-[11px] uppercase tracking-[0.25em] sm:tracking-[0.3em] text-primary-container mb-3">
-              Client voices
+            <span className="inline-block text-[10px] sm:text-[11px] uppercase tracking-[0.22em] sm:tracking-[0.28em] text-primary mb-3 font-bold">
+              What drivers say
             </span>
             <h2 className="text-3xl sm:text-headline-lg text-on-surface mb-4 font-bold">
-              Trusted at <span className="shimmer-text">3am</span> as much as 3pm.
+              Trusted at <span className="text-primary-container">3am</span> as much as 3pm.
             </h2>
             <p className="text-base text-on-surface-variant mb-6">
               Real drivers, real moments. Here’s what people say after we’ve
               shown up.
             </p>
 
-            <div className="grid grid-cols-2 gap-px bg-white/10 border border-white/10 max-w-sm">
-              <div className="bg-surface-container-lowest p-4">
-                <div className="text-[10px] uppercase tracking-widest text-on-surface-variant">
+            <div className="grid grid-cols-2 gap-px bg-outline-variant border border-outline-variant rounded-lg overflow-hidden max-w-sm">
+              <div className="bg-surface p-4">
+                <div className="text-[10px] uppercase tracking-widest text-on-surface-variant font-semibold">
                   Avg rating
                 </div>
                 <div className="text-2xl font-extrabold text-on-surface flex items-center gap-1">
@@ -87,8 +77,8 @@ export default function Testimonials() {
                   <Star size={18} className="text-primary-container fill-primary-container" />
                 </div>
               </div>
-              <div className="bg-surface-container-lowest p-4">
-                <div className="text-[10px] uppercase tracking-widest text-on-surface-variant">
+              <div className="bg-surface p-4">
+                <div className="text-[10px] uppercase tracking-widest text-on-surface-variant font-semibold">
                   5-star reviews
                 </div>
                 <div className="text-2xl font-extrabold text-on-surface">
@@ -100,10 +90,10 @@ export default function Testimonials() {
 
           {/* Card */}
           <div className="lg:col-span-8 relative">
-            <div className="relative min-h-[300px] sm:min-h-[260px] border border-white/10 bg-surface-container-lowest/40 backdrop-blur-md p-7 md:p-12 overflow-hidden">
+            <div className="relative min-h-[300px] sm:min-h-[260px] rounded-xl border border-outline-variant bg-surface p-7 md:p-12 overflow-hidden shadow-[0_8px_32px_-16px_rgba(0,0,0,0.10)]">
               <Quote
                 size={72}
-                className="absolute -top-3 -left-2 text-primary-container/[0.07]"
+                className="absolute -top-3 -left-2 text-primary-container/15"
               />
 
               <AnimatePresence mode="wait">
@@ -115,7 +105,6 @@ export default function Testimonials() {
                   transition={{ duration: 0.45, ease: [0.22, 1, 0.36, 1] }}
                   className="relative"
                 >
-                  {/* Stars */}
                   <div className="flex items-center gap-1 mb-4">
                     {Array.from({ length: 5 }, (_, n) => (
                       <Star
@@ -133,7 +122,7 @@ export default function Testimonials() {
                   <div className="flex items-center gap-3">
                     <span
                       aria-hidden="true"
-                      className="shrink-0 inline-flex items-center justify-center h-10 w-10 rounded-full bg-primary-container/15 border border-primary-container/40 text-primary-container text-sm font-extrabold"
+                      className="shrink-0 inline-flex items-center justify-center h-10 w-10 rounded-full bg-primary-container/15 border border-primary-container/40 text-primary text-sm font-extrabold"
                     >
                       {r.name
                         .split(' ')
@@ -143,10 +132,10 @@ export default function Testimonials() {
                     </span>
                     <div className="flex flex-wrap items-baseline gap-x-2 gap-y-0.5 text-xs sm:text-sm min-w-0">
                       <span className="font-bold text-on-surface">{r.name}</span>
-                      <span className="text-on-surface-variant/50 hidden sm:inline">·</span>
+                      <span className="text-on-surface-variant/40 hidden sm:inline">·</span>
                       <span className="text-on-surface-variant">{r.vehicle}</span>
-                      <span className="text-on-surface-variant/50 hidden sm:inline">·</span>
-                      <span className="text-primary-container">{r.location}</span>
+                      <span className="text-on-surface-variant/40 hidden sm:inline">·</span>
+                      <span className="text-primary">{r.location}</span>
                     </div>
                   </div>
                 </motion.div>
@@ -161,10 +150,10 @@ export default function Testimonials() {
                     key={n}
                     onClick={() => setI(n)}
                     aria-label={`Show review ${n + 1}`}
-                    className={`h-1.5 transition-all duration-300 ${
+                    className={`h-1.5 rounded-full transition-all duration-300 ${
                       n === i
                         ? 'w-8 bg-primary-container'
-                        : 'w-3 bg-white/20 hover:bg-white/40'
+                        : 'w-3 bg-outline-variant hover:bg-on-surface-variant'
                     }`}
                   />
                 ))}
@@ -173,14 +162,14 @@ export default function Testimonials() {
                 <button
                   onClick={() => setI((n) => (n - 1 + reviews.length) % reviews.length)}
                   aria-label="Previous review"
-                  className="h-9 w-9 border border-white/15 hover:border-primary-container hover:text-primary-container transition flex items-center justify-center"
+                  className="h-9 w-9 rounded-md border border-outline-variant text-on-surface-variant hover:border-primary-container hover:text-primary transition flex items-center justify-center"
                 >
                   <ChevronLeft size={18} />
                 </button>
                 <button
                   onClick={() => setI((n) => (n + 1) % reviews.length)}
                   aria-label="Next review"
-                  className="h-9 w-9 border border-white/15 hover:border-primary-container hover:text-primary-container transition flex items-center justify-center"
+                  className="h-9 w-9 rounded-md border border-outline-variant text-on-surface-variant hover:border-primary-container hover:text-primary transition flex items-center justify-center"
                 >
                   <ChevronRight size={18} />
                 </button>

@@ -58,25 +58,14 @@ export default function HowItWorks() {
     };
   }, [inView]);
 
-  // Progress 0..1 along the timeline, based on how many steps are reached
   const progress = activeStep < 0 ? 0 : activeStep / (steps.length - 1);
 
   return (
     <section
       ref={ref}
       id="how"
-      className="relative py-16 md:py-section-padding overflow-hidden"
+      className="relative py-16 md:py-section-padding overflow-hidden bg-background"
     >
-      {/* glow */}
-      <div
-        aria-hidden="true"
-        className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 h-[360px] w-[900px] max-w-full blur-[140px] opacity-50 pointer-events-none rounded-full"
-        style={{
-          background:
-            'radial-gradient(closest-side, rgba(77,224,130,0.10), transparent)',
-        }}
-      />
-
       <div className="relative max-w-container-max mx-auto px-5 md:px-12">
         <motion.div
           initial={{ opacity: 0, y: 24 }}
@@ -85,7 +74,7 @@ export default function HowItWorks() {
           transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
           className="text-center max-w-2xl mx-auto mb-12 md:mb-16"
         >
-          <span className="inline-block text-[10px] sm:text-[11px] uppercase tracking-[0.25em] sm:tracking-[0.3em] text-secondary mb-3">
+          <span className="inline-block text-[10px] sm:text-[11px] uppercase tracking-[0.22em] sm:tracking-[0.28em] text-secondary mb-3 font-bold">
             From SOS to sorted
           </span>
           <h2 className="text-3xl sm:text-headline-lg text-on-surface mb-3 font-bold">
@@ -103,16 +92,13 @@ export default function HowItWorks() {
             className="hidden lg:block absolute top-8 left-[12.5%] right-[12.5%] pointer-events-none"
             style={{ height: 1 }}
           >
-            {/* base dim track */}
-            <div className="absolute inset-x-0 top-0 h-px bg-white/10" />
-            {/* progress trail */}
+            <div className="absolute inset-x-0 top-0 h-px bg-outline-variant" />
             <motion.div
               className="absolute left-0 top-0 h-px bg-gradient-to-r from-primary-container/40 via-primary-container to-primary-container origin-left"
               style={{ transformOrigin: 'left center' }}
               animate={{ scaleX: progress }}
               transition={{ duration: 1, ease: [0.22, 1, 0.36, 1] }}
             />
-            {/* traveling glowing puck */}
             <motion.div
               className="absolute top-0 -translate-y-1/2 -translate-x-1/2 h-3 w-3 rounded-full bg-primary-container"
               animate={{
@@ -120,26 +106,16 @@ export default function HowItWorks() {
                 opacity: activeStep < 0 ? 0 : 1,
               }}
               transition={{ duration: 1, ease: [0.22, 1, 0.36, 1] }}
-              style={{ boxShadow: '0 0 18px 4px rgba(255,184,0,0.65)' }}
-            >
-              {/* trailing comet */}
-              <motion.span
-                className="absolute right-full top-1/2 -translate-y-1/2 h-px"
-                style={{
-                  width: 80,
-                  background:
-                    'linear-gradient(to left, rgba(255,184,0,0.85), transparent)',
-                }}
-              />
-            </motion.div>
+              style={{ boxShadow: '0 0 14px 3px rgba(255,184,0,0.55)' }}
+            />
           </div>
 
-          {/* Mobile vertical connecting line (centered) */}
+          {/* Mobile vertical connecting line */}
           <div
             aria-hidden="true"
             className="lg:hidden absolute top-8 bottom-8 left-1/2 -translate-x-1/2 w-px pointer-events-none"
           >
-            <div className="absolute inset-0 bg-white/10" />
+            <div className="absolute inset-0 bg-outline-variant" />
             <motion.div
               className="absolute top-0 left-0 right-0 bg-gradient-to-b from-primary-container/40 via-primary-container to-primary-container origin-top"
               style={{ transformOrigin: 'top center' }}
@@ -157,7 +133,7 @@ export default function HowItWorks() {
                 opacity: { duration: 0.4 },
               }}
               style={{
-                boxShadow: '0 0 18px 4px rgba(255,184,0,0.65)',
+                boxShadow: '0 0 14px 3px rgba(255,184,0,0.55)',
                 x: '-50%',
                 y: '-50%',
               }}
@@ -194,37 +170,32 @@ function Step({ step, index, activeStep }) {
       transition={{ delay: 0.08 * index, duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
       className="relative text-center"
     >
-      {/* Step badge */}
       <div className="relative mx-auto h-16 w-16 mb-5">
-        {/* Reached fill */}
         <motion.span
-          className="absolute inset-0 rounded-full bg-primary-container/15"
+          className="absolute inset-0 rounded-full"
           animate={{
             backgroundColor: reached
               ? 'rgba(255,184,0,0.22)'
-              : 'rgba(255,184,0,0.06)',
+              : 'rgba(255,184,0,0.08)',
           }}
           transition={{ duration: 0.4 }}
         />
-        {/* Ring */}
         <motion.span
           className="absolute inset-0 rounded-full border"
           animate={{
             borderColor: reached
               ? 'rgba(255,184,0,1)'
-              : 'rgba(255,184,0,0.25)',
+              : 'rgba(255,184,0,0.3)',
             boxShadow: reached
-              ? '0 0 24px 2px rgba(255,184,0,0.35)'
+              ? '0 0 18px 2px rgba(255,184,0,0.3)'
               : '0 0 0 0 rgba(255,184,0,0)',
           }}
           transition={{ duration: 0.4 }}
         />
-        {/* Active pulse ring (only on current) */}
         {isCurrent && !isFinal && (
           <span className="absolute inset-0 rounded-full border border-primary-container/60 animate-pulseRing" />
         )}
 
-        {/* Icon (steps 1-3) or tick (step 4) */}
         <span className="relative h-full w-full flex items-center justify-center">
           {isFinal ? (
             <CheckDraw active={reached} />
@@ -249,27 +220,25 @@ function Step({ step, index, activeStep }) {
                 strokeWidth={2}
                 className={`transition-colors duration-300 ${
                   reached
-                    ? 'text-primary-container'
-                    : 'text-primary-container/45'
+                    ? 'text-primary'
+                    : 'text-primary/40'
                 }`}
               />
             </motion.span>
           )}
         </span>
 
-        {/* Step number */}
         <motion.span
           animate={{
-            backgroundColor: reached ? '#ffb800' : '#e5e2e1',
-            color: reached ? '#412d00' : '#131313',
+            backgroundColor: reached ? '#ffb800' : '#dcdad2',
+            color: reached ? '#1a1100' : '#171717',
           }}
           transition={{ duration: 0.4 }}
-          className="absolute -top-2 -right-2 h-7 w-7 text-xs font-extrabold flex items-center justify-center"
+          className="absolute -top-2 -right-2 h-7 w-7 rounded-full text-xs font-extrabold flex items-center justify-center"
         >
           0{index + 1}
         </motion.span>
 
-        {/* Arrival burst */}
         {isCurrent && (
           <motion.span
             key={`burst-${activeStep}-${index}`}
@@ -283,7 +252,7 @@ function Step({ step, index, activeStep }) {
 
       <h3
         className={`text-lg md:text-xl font-bold mb-2 transition-colors duration-300 ${
-          reached ? 'text-on-surface' : 'text-on-surface/70'
+          reached ? 'text-on-surface' : 'text-on-surface/60'
         }`}
       >
         {step.title}
@@ -301,7 +270,7 @@ function CheckDraw({ active }) {
       width="28"
       height="28"
       viewBox="0 0 24 24"
-      className="text-primary-container"
+      className="text-primary"
       aria-hidden="true"
     >
       <motion.path

@@ -33,7 +33,7 @@ export default function FAQ() {
   const [open, setOpen] = useState(0);
 
   return (
-    <section id="faq" className="relative py-16 md:py-section-padding">
+    <section id="faq" className="relative py-16 md:py-section-padding bg-background">
       <div className="max-w-3xl mx-auto px-5 md:px-12">
         <motion.div
           initial={{ opacity: 0, y: 24 }}
@@ -42,7 +42,7 @@ export default function FAQ() {
           transition={{ duration: 0.6 }}
           className="text-center mb-12 md:mb-16"
         >
-          <span className="inline-block text-[10px] sm:text-[11px] uppercase tracking-[0.25em] sm:tracking-[0.3em] text-primary-container mb-3">
+          <span className="inline-block text-[10px] sm:text-[11px] uppercase tracking-[0.22em] sm:tracking-[0.28em] text-primary mb-3 font-bold">
             Got questions?
           </span>
           <h2 className="text-3xl sm:text-headline-lg text-on-surface font-bold mb-3">
@@ -53,23 +53,23 @@ export default function FAQ() {
           </p>
         </motion.div>
 
-        <div className="divide-y divide-white/10 border-y border-white/10">
+        <div className="divide-y divide-outline-variant border-y border-outline-variant">
           {faqs.map((f, i) => {
             const isOpen = open === i;
             return (
               <div key={f.q} className="group">
                 <button
                   onClick={() => setOpen(isOpen ? -1 : i)}
-                  className="w-full flex items-center justify-between gap-4 py-5 md:py-6 text-left hover:text-primary-container transition-colors"
+                  className="w-full flex items-center justify-between gap-4 py-5 md:py-6 text-left hover:text-primary transition-colors"
                   aria-expanded={isOpen}
                 >
-                  <span className="text-base sm:text-lg font-bold text-on-surface group-hover:text-primary-container transition-colors">
+                  <span className="text-base sm:text-lg font-bold text-on-surface group-hover:text-primary transition-colors">
                     {f.q}
                   </span>
                   <motion.span
                     animate={{ rotate: isOpen ? 45 : 0 }}
                     transition={{ duration: 0.25 }}
-                    className="shrink-0 inline-flex items-center justify-center h-9 w-9 border border-white/15 group-hover:border-primary-container text-on-surface-variant group-hover:text-primary-container transition-colors"
+                    className="shrink-0 inline-flex items-center justify-center h-9 w-9 rounded-full border border-outline-variant group-hover:border-primary-container text-on-surface-variant group-hover:text-primary transition-colors"
                   >
                     <Plus size={18} />
                   </motion.span>
